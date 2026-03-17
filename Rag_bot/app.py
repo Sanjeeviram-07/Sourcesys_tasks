@@ -7,7 +7,7 @@ from langchain_community.document_loaders import Docx2txtLoader
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.chains import RetrievalQA
+from langchain.chains.retrieval_qa.base import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain_groq import ChatGroq
 
