@@ -1,0 +1,19 @@
+Machine learning is a subset of artificial intelligence that allows computers to learn patterns from data.
+
+Supervised learning is a type of machine learning where the model is trained using labeled datasets. Examples include classification and regression.
+
+Classification predicts categories such as spam detection or disease diagnosis.
+
+Regression predicts continuous values such as house prices or temperature.
+
+Unsupervised learning works with unlabeled datasets. It finds patterns and relationships in the data.
+
+Clustering is a common unsupervised technique used to group similar data points.
+
+Reinforcement learning trains agents using rewards and penalties to learn optimal behavior.
+
+Deep learning is a subset of machine learning that uses neural networks with many layers.
+
+Natural language processing helps machines understand human language.
+
+Computer vision allows machines to interpret and analyze images and videos.
