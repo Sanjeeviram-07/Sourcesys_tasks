@@ -7,7 +7,12 @@ from langchain_community.document_loaders import Docx2txtLoader
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
+<<<<<<< HEAD
 from langchain.chains.retrieval_qa.base import RetrievalQA
+=======
+from langchain.chains import create_retrieval_chain
+from langchain.chains.combine_documents import create_stuff_documents_chain
+>>>>>>> ca4c006 (Updated AI Interview Simulator + fixes)
 from langchain.prompts import PromptTemplate
 from langchain_groq import ChatGroq
 
@@ -110,10 +115,11 @@ Answer:
     # -----------------------------
     # RAG Chain
     # -----------------------------
-    qa_chain = RetrievalQA.from_chain_type(
-        llm=llm,
-        retriever=retriever,
-        chain_type_kwargs={"prompt": prompt}
+    document_chain = create_stuff_documents_chain(llm, prompt)
+
+    qa_chain = create_retrieval_chain(
+        retriever,
+        document_chain
     )
 
     # -----------------------------
@@ -123,7 +129,9 @@ Answer:
 
     if question:
 
-        answer = qa_chain.run(question)
+        response = qa_chain.invoke({"input": question})
+
+        answer = response["answer"]
 
         st.write("### Answer")
         st.write(answer)
