@@ -1,6 +1,8 @@
-streamlit
+streamlit==1.32.0
 langchain==0.1.16
-langchain-community
+langchain-community==0.0.32
+langchain-core==0.1.42
+pydantic==1.10.13
 langchain-text-splitters
 langchain-groq
 sentence-transformers
@@ -8,5 +10,4 @@ faiss-cpu
 python-dotenv
 pypdf
 docx2txt
-langchain-core
 tiktoken
