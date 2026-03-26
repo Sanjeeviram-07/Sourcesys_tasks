@@ -7,12 +7,8 @@ from langchain_community.document_loaders import Docx2txtLoader
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
-<<<<<<< HEAD
-from langchain.chains.retrieval_qa.base import RetrievalQA
-=======
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
->>>>>>> ca4c006 (Updated AI Interview Simulator + fixes)
 from langchain.prompts import PromptTemplate
 from langchain_groq import ChatGroq
 
@@ -102,14 +98,14 @@ Context:
 {context}
 
 Question:
-{question}
+{input}
 
 Answer:
 """
 
     prompt = PromptTemplate(
         template=template,
-        input_variables=["context", "question"]
+        input_variables=["context", "input"]
     )
 
     # -----------------------------
